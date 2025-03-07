@@ -12,7 +12,7 @@ import { useApi } from '../hooks/useApi';
 import { endpoints } from '../services/api';
 
 import ScrollAnimation from 'react-animate-on-scroll';
-// dhruv
+// dhruv 123
 function AboutPage() {
     useEffect(() => {
         window.scrollTo(0, 0);
