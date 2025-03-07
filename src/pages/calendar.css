@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@100..800&display=swap');
+
+
+
+
+.calendar-container { text-align: center; padding: 20px; font-family: "Anek Devanagari", serif;; } 
+.calendar-title { font-size: 24px; margin-bottom: 20px; } 
+.event-card { padding: 5px; border-radius: 5px; color: white; transform: rotate(0deg); box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);  font-size: 20px; line-height: 26px; width: 80%; margin: 0 auto;}
+
+/* .fc-scroller{
+    height: 700px;
+    width: 700px;
+} */
+
+.fc-daygrid-event{white-space: normal; text-align: center;}
+
+/* Weekday names (Sun, Mon, Tue, etc.) in black */
+
+/* Dates (1 to 31) in gray */
+.fc .fc-daygrid-day-top{flex-direction: row;}
+.fc-daygrid-day-number { color: gray !important;  font-size: 48px; line-height: 57.6px; font-weight: 400; padding: 4px !important;}
+.fc-day{padding: 12px;}
+
+.fc .fc-daygrid-day.fc-day-today { background: none !important; color: inherit !important; }
+
+.fc-col-header-cell-cushion{  text-decoration: none; font-family: "Anek Devanagari", serif; font-size: 48px; line-height: 57.6px; font-weight: 500; color: #4B3768; }
+.fc-col-header-cell{background-color: transparent !important;}
+
+.fc .fc-daygrid-day-number { text-decoration: none; }
+
+.fc .fc-button-primary:disabled { background-color: #78519e}
+
+.fc .fc-col-header-cell-cushion{font-family: "Anek Devanagari", serif;;}
+
+.fc-today-button.fc-button.fc-button-primary{display: none;}
+.fc-button-group{margin: 0;}
+.fc-prev-button.fc-button.fc-button-primary,
+.fc-next-button.fc-button.fc-button-primary{background-color: transparent; border: none;}
+.fc-icon-chevron-left::before,
+.fc-icon-chevron-right::before{color: #4B3768; font-size: 32px; font-weight: 300;}
+
+.fc .fc-button-primary:not(:disabled).fc-button-active, 
+.fc .fc-button-primary:not(:disabled):active,
+.fc .fc-button-primary:active,
+.fc .fc-button-primary:focus-visible,
+.fc-prev-button.fc-button.fc-button-primary:focus, 
+.fc-next-button.fc-button.fc-button-primary:focus{box-shadow: none; border: none; background: none;}
+
+.fc .fc-toolbar-title {font-family: "Anek Devanagari", serif; font-size: 48px; line-height: 57.6px; font-weight: 500; color: #4B3768;}
+
+.fc-event.fc-event-start.fc-event-end.fc-event-future.fc-daygrid-event.fc-daygrid-block-event.fc-h-event,
+.fc-event.fc-event-start.fc-event-end.fc-event-past.fc-daygrid-event.fc-daygrid-block-event.fc-h-event{background-color: transparent !important; border: none !important;}
+
+
+.event-ann-flex{display: flex; align-items: center; gap: 62px; margin-top: 70px;}
+.event-ann-flex .info-item{display: flex; align-items: center; gap: 30px;  font-size: 24px; font-weight: 400; color: #09213A; line-height: 26px;}
+.event-ann-flex .info-item .item-box{width: 110px; height: 55px; border-radius: 10px; background-color: #78519E;}
+.event-ann-flex .info-item .item-box.ann{ background-color: #4B3768;}
+
+
+
+
+
+
+@media only screen and (max-width: 1640px) {
+
+    .fc .fc-toolbar-title,
+    .fc-col-header-cell-cushion,
+    .fc-daygrid-day-number{font-size: 28px; line-height: 42px;}
+
+    .event-card{font-size: 16px ; line-height: 20px;}
+
+    .event-ann-flex{margin-top: 40px; }
+    .event-ann-flex .info-item { gap: 20px;  font-size: 18px; line-height: 22px;}
+    .event-ann-flex .info-item .item-box{width: 80px; height: 40px;}
+
+}
+
+
+@media only screen and (max-width: 1024px) {
+
+    .calendar-area {padding: 50px 0;}
+    .calendar-area .container{padding: 30px;}
+    .calendar-area h2{font-size: 42px; margin-bottom: 40px;}
+    .fc .fc-daygrid-body{width: 100%;}
+    .fc-col-header {width: 100%;}
+
+}

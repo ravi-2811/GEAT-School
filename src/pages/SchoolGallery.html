@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Gallery</title>
+    <style>
+        .about-photo-gallery{background: #F9F9F9; margin: 80px 0; height: 100vh !important;  overflow: hidden; opacity: 1 !important;}
+        .about-photo-gallery .container{width: 100%; max-width: 100%; padding: 0 140px;}
+        .about-photo-gallery .inner-flex{display: flex; }
+        .about-photo-gallery .inner-flex .left{width: 50%; padding: 140px 160px 140px 0; display: flex; flex-direction: column; justify-content: space-between;}
+        .about-photo-gallery .inner-flex .left h2{font-size: 48px; line-height: 52px; color: #261C35; font-family: 'Esperanza Headline Roman';}
+        .about-photo-gallery .inner-flex .left h2 span{color: #78519E; display: block;}
+        .about-photo-gallery .inner-flex .left p{font-family: "Anek Devanagari", sans-serif; font-size: 24px; font-weight: 400; line-height: 28.8px; letter-spacing: 0.02em; margin: 0 0 24px 0; color: #261C35;}
+        .about-photo-gallery .inner-flex .left p:last-child{margin: 0px;}
+
+        .about-photo-gallery .inner-flex .right-wrapper{width: 50%;  display: flex; height: 100vh !important;  position: relative ; justify-content: space-between;}
+        .about-photo-gallery .inner-flex .right-wrapper::before{background: linear-gradient(0deg, #F9F9F9 10.39%, rgba(249, 249, 249, 0) 103.86%); position: absolute; top: 0px; left: 0px; width: 100%; height: 260px; content: ''; z-index: 1; transform: rotate(180deg);}
+        .about-photo-gallery .inner-flex .right-wrapper::after{background: linear-gradient(0deg, #F9F9F9 10.39%, rgba(249, 249, 249, 0) 103.86%); position: absolute; bottom: 0px; left: 0px; width: 100%; height: 260px; content: ''; z-index: 1;}
+        .about-photo-gallery .inner-flex .right-wrapper .photo-line{width: 49%;  position: relative; display: flex; flex-direction: column;}
+        .about-photo-gallery .inner-flex .right-wrapper .photo-line .photo{width: 100%; min-height: 416px; position: relative; overflow: hidden; margin: 8px 0;}
+        .about-photo-gallery .inner-flex .right-wrapper .photo-line .photo img{width: 100%; height: 100%; position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px; object-fit: cover;}
+        .about-photo-gallery .inner-flex .right-wrapper .photo-line .photo.large{min-height: 650px;}
+        .about-photo-gallery .inner-flex .right-wrapper img{width: 100%;}
+    </style>
+</head>
+
+<body>
+        <section>
+        <div class="about-photo-gallery curriculum-areas">
+          <div class="container">
+            <div class="inner-flex">
+              <div class="left">
+                <div class="scroll-animation" data-animate="fadeInUp" data-once="true" data-delay="350">
+                  <h2>
+                    <span>About</span> Gokuldham High School<br />& Junior College
+                  </h2>
+                </div>
+                <div class="bottom">
+                  <div class="scroll-animation" data-animate="fadeInUp" data-once="true" data-delay="350">
+                    <p>
+                      Gokuldham High School & Junior College was founded on July 2, 1983. Making a humble beginning in a rented premises with 3 students and 5 staff members, the school has now grown into a multi-storey structure with 3313 students and 200 staff members. It is designed to accommodate a volume of 3688 students.
+                    </p>
+                    <p>
+                      We are a Co-educational institution affiliated to the Council for the Indian School Certificate Examinations (CISCE) preparing students for the Indian Certificate of Secondary Education (ICSE - X) and for the Indian School Certificate Examination (ISC - XII). It was established in June 2008 and is run and managed by Goenka and Associates Educational Trust. It follows ICSE curriculum.
+                    </p>
+                  </div>
+                </div>
+              </div>
+      
+              <div class="right-wrapper">
+                <div class="photo-line left-cl">
+                  <div class="photo large">
+                    <img src="../../public/images/footer-1.jpg" alt="Photo 5" />
+                  </div>
+                  <div class="photo small">
+                    <img src="../../public/images/footer-2.jpg" alt="Photo 5" />
+                  </div>
+                  <div class="photo large">
+                    <img src="../../public/images/footer-3.jpg" alt="Eligibility Criteria" />
+                  </div>
+                  <div class="photo small">
+                    <img src="../../public/images/footer-4.jpg" alt="Activity" />
+                  </div>
+                </div>
+                <div class="photo-line right-cl">
+                  <div class="photo small">
+                    <img src="../../public/images/footer-4.jpg" alt="Infrastructure Photo" />
+                  </div>
+                  <div class="photo large">
+                    <img src="../../public/images/footer-3.jpg" alt="Photo 3" />
+                  </div>
+                  <div class="photo small">
+                    <img src="../../public/images/footer-2.jpg" alt="Research Centre" />
+                  </div>
+                  <div class="photo large">
+                    <img src="../../public/images/footer-1.jpg" alt="School Fees Photo" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+        <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+
+        <script>
+
+            console.clear();
+
+            const leftColumn = document.querySelector(".left-cl");
+            const rightColumn = document.querySelector(".right-cl");
+
+            gsap.set(rightColumn, { y: window.innerHeight - rightColumn.scrollHeight });
+            gsap.set(".about-photo-gallery", { opacity: 1 });
+
+            const tl = gsap
+            .timeline({
+                defaults: {
+                ease: "none"
+                },
+                scrollTrigger: {
+                trigger: ".about-photo-gallery",
+                start: "top top",
+                end: "100%",
+                pin: true,
+                scrub: true,
+                markers: false
+                }
+            })
+            .to(leftColumn, {
+                y: window.innerHeight - rightColumn.scrollHeight
+            })
+            .to(
+                rightColumn,
+                {
+                y: 0
+                },
+                "<"
+            );
+
+        </script>
+
+      
+</body>
+
+</html>
